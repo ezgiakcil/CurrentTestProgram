@@ -49,7 +49,7 @@ namespace NationalInstruments.Examples.SimpleReadWrite
         /// </summary>
         private void InitializeComponent()
         {
-            System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(SelectResource));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectResource));
             this.availableResourcesListBox = new System.Windows.Forms.ListBox();
             this.okButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
@@ -61,14 +61,14 @@ namespace NationalInstruments.Examples.SimpleReadWrite
             // availableResourcesListBox
             // 
             this.availableResourcesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-                | System.Windows.Forms.AnchorStyles.Left) 
-                | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.availableResourcesListBox.Location = new System.Drawing.Point(5, 18);
             this.availableResourcesListBox.Name = "availableResourcesListBox";
             this.availableResourcesListBox.Size = new System.Drawing.Size(282, 108);
             this.availableResourcesListBox.TabIndex = 0;
-            this.availableResourcesListBox.DoubleClick += new System.EventHandler(this.availableResourcesListBox_DoubleClick);
             this.availableResourcesListBox.SelectedIndexChanged += new System.EventHandler(this.availableResourcesListBox_SelectedIndexChanged);
+            this.availableResourcesListBox.DoubleClick += new System.EventHandler(this.availableResourcesListBox_DoubleClick);
             // 
             // okButton
             // 
@@ -93,7 +93,7 @@ namespace NationalInstruments.Examples.SimpleReadWrite
             // visaResourceNameTextBox
             // 
             this.visaResourceNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-                | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.visaResourceNameTextBox.Location = new System.Drawing.Point(5, 157);
             this.visaResourceNameTextBox.Name = "visaResourceNameTextBox";
             this.visaResourceNameTextBox.Size = new System.Drawing.Size(282, 20);
@@ -103,7 +103,7 @@ namespace NationalInstruments.Examples.SimpleReadWrite
             // AvailableResourcesLabel
             // 
             this.AvailableResourcesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-                | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.AvailableResourcesLabel.Location = new System.Drawing.Point(5, 5);
             this.AvailableResourcesLabel.Name = "AvailableResourcesLabel";
             this.AvailableResourcesLabel.Size = new System.Drawing.Size(279, 12);
@@ -113,7 +113,7 @@ namespace NationalInstruments.Examples.SimpleReadWrite
             // ResourceStringLabel
             // 
             this.ResourceStringLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-                | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ResourceStringLabel.Location = new System.Drawing.Point(5, 141);
             this.ResourceStringLabel.Name = "ResourceStringLabel";
             this.ResourceStringLabel.Size = new System.Drawing.Size(279, 13);
@@ -141,6 +141,7 @@ namespace NationalInstruments.Examples.SimpleReadWrite
             this.Text = "Select Resource";
             this.Load += new System.EventHandler(this.OnLoad);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
         #endregion

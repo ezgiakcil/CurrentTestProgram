@@ -13,7 +13,6 @@ using System.IO;			// for file operation
 using System.Reflection;		// for file operation
 using System.IO.Ports;
 
-
 namespace NationalInstruments.Examples.SimpleReadWrite
 {
     /// <summary>
@@ -422,11 +421,8 @@ namespace NationalInstruments.Examples.SimpleReadWrite
         [STAThread]
         static void Main()
         {
-           // Application.Run(new MainForm());
-            MainForm f = new MainForm(true);
-            f.ShowDialog();
-
-            // Application.Run(new Form1()); // Form1' i içine yazd?k.
+            //    Application.Run(new MainForm());
+            Application.Run(new Form1()); // Form1' i içine yazd?k.
         }
 
         private void openSession_Click(object sender, System.EventArgs e)
@@ -743,19 +739,19 @@ namespace NationalInstruments.Examples.SimpleReadWrite
 	            ActiveChannel = Convert.ToString(ActiveChanCombo.SelectedItem);
 	            switch(ActiveChannel)
 	            {
-			        case "Kanal 1":
-				        BatteryChannel = "1";
-				        VoltageValue = VoltageValue1;
-				        limit_deger_max = limit_deger_max1;
-				        limit_deger_min = limit_deger_min1;
-				        break;
+			case "Kanal 1":
+				BatteryChannel = "1";
+				VoltageValue = VoltageValue1;
+				limit_deger_max = limit_deger_max1;
+				limit_deger_min = limit_deger_min1;
+				break;
 			
-			        case "Kanal 2":
-				        BatteryChannel = "2";
-				        VoltageValue = VoltageValue2;
-				        limit_deger_max = limit_deger_max2;
-				        limit_deger_min = limit_deger_min2;
-				        break;
+			case "Kanal 2":
+				BatteryChannel = "2";
+				VoltageValue = VoltageValue2;
+				limit_deger_max = limit_deger_max2;
+				limit_deger_min = limit_deger_min2;
+				break;
 	            }
            
                 try
@@ -773,8 +769,7 @@ namespace NationalInstruments.Examples.SimpleReadWrite
                     readTextBox.Text = InsertCommonEscapeSequences(mbSession.RawIO.ReadString());
                     string akim = readCurrent();
 
-                    curr_val = Convert.ToDouble(akim);      // akim double olarak okunuyor
-                    comp = Convert.ToInt32(curr_val * 1000);        // mA e çeviriliyor.
+                    comp = Convert.ToDouble(akim);
                     if (comp > limit_deger_min && comp < limit_deger_max)   //Burada limit de?erler alt?nda ak?m de?eri kar??la?t?r?lmas? yap?lm??t?r.
                     {
                         label1.Text = "PASS";
@@ -838,25 +833,11 @@ namespace NationalInstruments.Examples.SimpleReadWrite
             {
 
             }
-       
+
         private void ConfigButton_Click(object sender, EventArgs e)
         {
-            /*Form2 form2sec = new Form2();
-            form2sec.Show();*/
-
-            ConEntry c = new ConEntry();
-            c.Text = "?ifre Girin..";
-            c.ShowDialog(); //?ifre formunu göster
-
-            if (c.DialogResult == DialogResult.Cancel)//?ifre bilinmemi?se veya iptale bas?lm??sa programdan ç?k
-            {
-                Close();
-            }
-            else // ?ifre Do?ru Girildiyse
-            {
-                MessageBox.Show("Tebrikler ?ifreyi Do?ru Bildiniz");
-            }
-            c.Show();
+            Form2 form2sec = new Form2();
+            form2sec.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
